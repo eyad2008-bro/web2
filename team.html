@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>فريق العمل</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Cairo', sans-serif;
+            background-color: #f8fafc;
+            color: #333;
+        }
+
+        .team-page {
+            padding: 4rem 1rem;
+            background: linear-gradient(to bottom, #e3f2fd, #ffffff);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #1e88e5;
+            border-bottom: 2px solid #64b5f6;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .page-content p {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #555;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.07);
+            padding: 2rem 1rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 4px solid #bbdefb;
+        }
+
+        .team-member h3 {
+            font-size: 1.2rem;
+            color: #0d47a1;
+            margin-bottom: 0.3rem;
+        }
+
+        .team-member p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .social-links {
+            margin-top: 0.8rem;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 0 0.4rem;
+            display: inline-block;
+            transition: transform 0.2s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+
+        .page-content > div:last-child {
+            margin-top: 3rem;
+            text-align: justify;
+            line-height: 1.9;
+            font-size: 1.05rem;
+            color: #444;
+        }
+
+        @media (max-width: 600px) {
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .team-member img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .team-member h3 {
+                font-size: 1.1rem;
+            }
+
+            .team-member p {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="team-page">
+        <div class="container">
+            <h2 class="section-title">الموظفون والفريق</h2>
+            <div class="page-content">
+                <p>الموظفون الرائعون خلف هذه المؤسسة</p>
+
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="img\1.jpg" alt="إياد الحجي">
+                        <h3>إياد الحجي</h3>
+                        <p>نائب الرئيس</p>
+                        <div class="social-links">
+                            <a href="mailto:eyad@example.com" title="إرسال بريد">📧</a>
+                            <a href="https://linkedin.com" title="لينكدإن">🔗</a>
+                            <a href="https://x.com" title="تويتر">🐦</a>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="img\2.jpg" alt="يعرب اليعربي">
+                        <h3>يعرب اليعربي</h3>
+                        <p>الرئيس التنفيذي</p>
+                        <div class="social-links">
+                            <a href="mailto:yaarub@example.com" title="إرسال بريد">📧</a>
+                            <a href="https://linkedin.com" title="لينكدإن">🔗</a>
+                            <a href="https://x.com" title="تويتر">🐦</a>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="img\3.jpg" alt="محمد البلوشي">
+                        <h3>محمد البلوشي</h3>
+                        <p>مدير المشاريع</p>
+                        <div class="social-links">
+                            <a href="mailto:mohamed@example.com" title="إرسال بريد">📧</a>
+                            <a href="https://linkedin.com" title="لينكدإن">🔗</a>
+                            <a href="https://x.com" title="تويتر">🐦</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p>نعمل على تمكين الموظفين من خلال التدريب المستمر وتوفير بيئة عمل داعمة تشجع على الإبداع والابتكار...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

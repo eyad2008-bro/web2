@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مؤسسة البركة - خدمات احترافية بجودة عالية</title>
+    <style>
+        :root {
+            --primary-color: #2c5f2d;
+            --secondary-color: #97bc62;
+            --accent-color: #f2aa4c;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        .hero {
+            background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            width: 60%;
+        }
+        
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: #e6953a;
+            transform: translateY(-3px);
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .services {
+            background-color: var(--light-color);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .service-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--accent-color);
+        }
+        
+        .service-card ul {
+            margin-top: 1rem;
+            padding-right: 1rem;
+        }
+        
+        .service-card ul li {
+            margin-bottom: 0.5rem;
+            list-style-position: inside;
+        }
+        
+        .team {
+            text-align: center;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .team-member {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+            border: 5px solid var(--light-color);
+        }
+        
+        .team-member h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-member p {
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+        
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: white;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        .contact-info {
+            margin-top: 1rem;
+        }
+        
+        .contact-info p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-left: 0.5rem;
+            color: var(--accent-color);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid #444;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+            
+            .hero-content {
+                width: 90%;
+                text-align: center;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+        }
+        
+        /* صفحة عن المنظمة */
+        .page-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+        
+        .page-content h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+        }
+        
+        .page-content p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+        
+        /* صفحة الخدمات */
+        .service-details {
+            margin-top: 2rem;
+        }
+        
+        /* صفحة الفريق */
+        .team-page .team-grid {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+        
+        /* صفحة الاتصال */
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+        
+        .submit-btn {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background: #e6953a;
+        }
+        
+        .contact-map {
+            margin-top: 2rem;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        /* صفحة الاستدامة */
+        .sustainability-goals {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .goal-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .goal-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">مؤسسة <span>البركة</span></div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="about.html">عن المنظمة</a></li>
+                        <li><a href="services.html">خدماتنا</a></li>
+                        <li><a href="sustainability.html">الاستدامة</a></li>
+                        <li><a href="team.html">فريقنا</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>تقدم خدماتنا بجودة.. ونصون ثقة تبنى على الاحتراف</h1>
+                <p>مؤسسة البركة هي كيان متكامل يضم فريقًا متميزًا من المختصين في مجالات مختلفة تعمل لتحقيق رؤية احترافية تعزز جودة الخدمات المقدمة</p>
+                <a href="about.html" class="btn">تعرف علينا</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">عن مؤسسة البركة</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>مؤسسة البركة هي كيان متكامل يضم فريقًا متميزًا من المختصين في مجالات مختلفة. وتعمل يوميًا لتحقيق رؤية احترافية تعزز جودة الخدمات المقدمة، حيث أن التميز لا يأتي صدقة، بل هو ثمرة لتخطيط استراتيجي دقيق وتنفيذ محوري ومتابعة مستمرة.</p>
+                    <p>لذلك نحرص على بناء منظومة عمل قائمة على الكفاءة والالتزام، لضمان تحقيق الاحتياجات العميل، وتقديم نتائج قابلة للقياس والتطوير، هدفًا أن نكون الشريك الموثوق الذي يضمن الجودة والثقة، من خلال توفير حلول مرنة تناسب طبيعة كل مشروع، وتضمن تحقيق الأثر المطلوب على أرض الواقع.</p>
+                    <a href="about.html" class="btn" style="margin-top: 1rem;">المزيد عنا</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216" alt="فريق العمل">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">خدماتنا</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>إدارة المشاريع</h3>
+                    <p>تقدم خدمات إدارة المشاريع بجودة عالية وفق أفضل الممارسات العالمية تشمل:</p>
+                    <ul>
+                        <li>إعداد خطط المشاريع</li>
+                        <li>تحديد النتائج والمخرجات</li>
+                        <li>توزيع المهام على الفرق</li>
+                        <li>متابعة الإنجاز وضمان الالتزام بالجدول الزمني</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>الدراسات والتقييم</h3>
+                    <p>تقوم بإجراء دراسات متعمقة وتقييم الأثر وتحليل البيانات لتقديم توصيات دقيقة ومحورية تدعم أهداف العميل.</p>
+                </div>
+                <div class="service-card">
+                    <h3>استشارات إدارية وتنظيمية</h3>
+                    <p>توفر استشارات متنوعة لدعم القرارات الإدارية والتنظيمية منها:</p>
+                    <ul>
+                        <li>استشارات إدارية</li>
+                        <li>استشارات موارد بشرية</li>
+                        <li>تطوير أنظمة العمل</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>التدريب والتطوير</h3>
+                    <p>توفر برامج تدريبية متخصصة لبناء القدرات وتطوير المهارات، سواء داخلية أو موجهة للجمهور.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+        <div class="container">
+            <h2 class="section-title">فريقنا</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="img/1.jpg"alt="إياد الحجي">
+                    <h3>إياد الحجي</h3>
+                    <p>نائب الرئيس</p>
+                </div>
+                <div class="team-member">
+                    <img src="img/2.jpg" alt="يعرب اليعربي">
+                    <h3>يعرب اليعربي</h3>
+                    <p>الرئيس التنفيذي</p>
+                </div>
+                <div class="team-member">
+                    <img src="img/3.jpg" alt="محمد البلوشي">
+                    <h3>محمد البلوشي</h3>
+                    <p>مدير المشاريع</p>
+                </div>
+            </div>
+            <a href="team.html" class="btn" style="margin-top: 2rem;">تعرف على الفريق</a>
+        </div>
+    </section>
+
+    <!-- Sustainability Section -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">الاستدامة</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7" alt="الاستدامة">
+                </div>
+                <div class="about-text">
+                    <p>تسعى مؤسسة البركة إلى تكوين أثر مستدام بإنجازاتها التي تؤدي إلى تغيير إيجابي يدوم مع الزمن. تبدأ خطتنا من مرحلة التخطيط، حيث تدخل مبادئ الاستدامة في صميم كل مشروع، مع التركيز على تحقيق توازن بين الجدوى الاقتصادية والآثار الاجتماعية، والحفاظ على البيئة.</p>
+                    <p>نختار المواد والموارد والأساليب التي تحقق أعلى عائد بأقل تكلفة بيئية ممكنة، ونعمل على تعزيز وعي فريق العمل والمستفيدين بالممارسات المستدامة.</p>
+                    <a href="sustainability.html" class="btn" style="margin-top: 1rem;">المزيد عن استراتيجيتنا</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>عن المؤسسة</h3>
+                    <p>مؤسسة البركة هي كيان متكامل يضم فريقًا متميزًا من المختصين في مجالات مختلفة تعمل لتحقيق رؤية احترافية تعزز جودة الخدمات المقدمة.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="about.html">عن المنظمة</a></li>
+                        <li><a href="services.html">خدماتنا</a></li>
+                        <li><a href="sustainability.html">الاستدامة</a></li>
+                        <li><a href="team.html">فريقنا</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>اتصل بنا</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> 968+99622478</p>
+                        <p><i class="fas fa-phone"></i> 968+78660012</p>
+                        <p><i class="fas fa-envelope"></i> albarka@gmail.com</p>
+                        <p><i class="fas fa-envelope"></i> elonmask@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> سلطنة عمان، القرم، دوار الجنة، سكة 290</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 مؤسسة البركة. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
